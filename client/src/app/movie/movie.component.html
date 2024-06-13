@@ -1,0 +1,12 @@
+<header><h1>MOVIES!!!</h1></header>
+<li>
+    <h2>{{movies.title}}</h2>
+    <img [src]="movies.poster" alt={{movies.title}}>
+    <p>{{movies.synopsis}}</p>
+    <p>{{movies.genres}}</p>
+    <p>{{movies.year}}</p>
+    <p>{{movies.director}}</p>
+    <p>{{movies.actors}}</p>
+    <p>{{movies.director}}</p>
+</li>
+<button><a [routerLink]="['']">Go back to movie list</a></button>
