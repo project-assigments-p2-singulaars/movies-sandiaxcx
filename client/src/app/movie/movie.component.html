@@ -1,12 +1,26 @@
-<header><h1>MOVIES!!!</h1></header>
-<li>
-    <h2>{{movies.title}}</h2>
+
+<header>
+    <img src="../../assets/factoryx2.png" alt="">
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>TV Shows</li>
+            <li>Movies</li>
+            <li>New & Popular</li>
+            <li>My List</li>
+        </ul>
+    </nav>
+    </header>
+<div class="movieDetails">
     <img [src]="movies.poster" alt={{movies.title}}>
-    <p>{{movies.synopsis}}</p>
-    <p>{{movies.genres}}</p>
-    <p>{{movies.year}}</p>
-    <p>{{movies.director}}</p>
-    <p>{{movies.actors}}</p>
-    <p>{{movies.director}}</p>
-</li>
+    <!-- <video src="movies.url" muted autoplay id="background-video"></video> -->
+     <div class="textDetails">
+    <h2>{{movies.title}}</h2>
+    <p class="synopsis">{{movies.synopsis}}</p>
+    <p>Genres: {{movies.genres}}</p>
+    <p>Year:{{movies.year}}</p>
+    <p>Director: {{movies.director}}</p>
+    <p>Cast: {{movies.actors}}</p>
+     </div>
+</div>
 <button><a [routerLink]="['']">Go back to movie list</a></button>

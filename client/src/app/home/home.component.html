@@ -1,13 +1,36 @@
 
-<header></header>
+<header>
+    <img src="../../assets/factoryx2.png" alt="">
+    <nav>
+        <ul class="nav">
+            <li>Home</li>
+            <li>TV Shows</li>
+            <li>Movies</li>
+            <li>New & Popular</li>
+            <li>My List</li>
+        </ul>
+    </nav>
+    </header>
+<section class="videoBanner">
+    <video src="../../assets/silicon.mp4" muted autoplay id="background-video"></video>
+</section>
 <div>
+    <p>We Think You'll Love These</p>
 <ul>
-    @for (movie of (movies | async) || []; track movie.id) {
-        <li>
-            <img [src]="movie.poster" alt={{movie.title}}>
-            <h2>{{movie.title}}</h2>
-            <button [routerLink]="['/movies', movie.id]">View Detail</button>
-        </li>
-    }
+    <div class="wrapper">
+
+        <section id="section1">
+        <a href="#section3" class="arrow__btn left-arrow">‹</a>
+        @for (movie of (movies | async) || []; track movie.id) {
+            <div class="item">
+            <!-- <div class="slider-item"> -->
+                <a [routerLink]="['/movies', movie.id]">
+                    <img [src]="movie.poster" alt="{{movie.title}}">
+                </a>
+            </div>
+            <a href="#section1" class="arrow__btn right-arrow">›</a>
+        }
+        </section>
+    </div>
 </ul>
 </div>
