@@ -10,17 +10,17 @@
             <li>My List</li>
         </ul>
     </nav>
-    </header>
+</header>
 <div class="movieDetails">
     <img [src]="movies.poster" alt={{movies.title}}>
     <!-- <video src="movies.url" muted autoplay id="background-video"></video> -->
-     <div class="textDetails">
+    <div class="textDetails">
     <h2>{{movies.title}}</h2>
     <p class="synopsis">{{movies.synopsis}}</p>
     <p>Genres: {{movies.genres}}</p>
     <p>Year:{{movies.year}}</p>
     <p>Director: {{movies.director}}</p>
     <p>Cast: {{movies.actors}}</p>
-     </div>
+    </div>
 </div>
-<button><a [routerLink]="['']">Go back to movie list</a></button>
+<button><a [routerLink]="['/home']">Go back to movie list</a></button>

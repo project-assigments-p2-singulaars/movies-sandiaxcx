@@ -148,7 +148,7 @@ p {
         
       }
   
-      .arrow__btn {
+      .arrowButton {
         position: absolute;
         color: #fff;
         text-decoration: none;
@@ -160,12 +160,12 @@ p {
         z-index: 1;
       }
   
-      .left-arrow {
-        top:0; bottom:0; left:0;
+      .leftArrow {
+        top: 0; bottom:0; left:0;
         background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
       }
       
-      .right-arrow {
+      .rightArrow {
         top:0; bottom:0; right: 0;
         background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
       }
