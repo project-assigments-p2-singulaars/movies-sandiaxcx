@@ -26,10 +26,10 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid green;
+    // border: 1px solid green;
 
     .closeButton{
-        border: 1px solid blue;
+        // border: 1px solid blue;
         width: 60vw;
         display: flex;
         justify-content: end;
@@ -38,7 +38,7 @@ header{
 
 .movieDetails{
     color: white;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: grid;
     grid-template-areas: 
         "poster"
@@ -62,11 +62,11 @@ header{
         width: 100%;
         max-width: 1200px;
         grid-area: textDetails;
-        border: 1px solid goldenrod;
+        // border: 1px solid goldenrod;
 
         .titlePlay{
             position: absolute;
-            border: 1px solid pink;
+            // border: 1px solid pink;
             width: 100%;
             height: 25vh;
             font-size: 4em;
@@ -86,7 +86,7 @@ header{
                 align-items: center;
                 background-color: transparent;
                 gap: 0.2em;
-                border: 1px solid purple;
+                // border: 1px solid purple;
 
                 #playButton{
                     height: 0.7em;

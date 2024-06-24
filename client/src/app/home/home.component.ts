@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnInit, ViewChild, inject } from '@angular/core';
 import { Movies } from '../shared/interfaces/movies';
 import { MovieComponent } from "../movie/movie.component";
 import { Observable } from 'rxjs';
@@ -14,59 +14,10 @@ import { AsyncPipe } from '@angular/common';
     imports: [MovieComponent, RouterLink, AsyncPipe]
 })
 export class HomeComponent{
-  // @Input() movies!:Movies[];
-  // movies!: Observable <Movies[]>
-  // constructor(private movieService:MovieService){}
-
-  // ngOnInit(): void {
-  //   this.movies = this.movieService.getMovies()
-  // }
-
-  // getMovies(id: number) {
-  //   const movieDetails = this.movieService.getMovies(id);
-  //   console.log('Movie Details:', movieDetails);
-  //   }
-
-    // @Input() movies!: Movies[];
-    // @Input('id') id!: string;
-    // movie!: Movies;
-    // products!: Observable<Movies[]>
-
-    // constructor(private movieService:MovieService){}
-
   
-    // ngOnInit(): void {
-    //   this.products = this.movieService.getMovies()
-    //   const movie = this.movies.find(movie => movie.id === +this.id);
-    //   if (movie) {
-    //     this.movie = movie;
-    //   }
-    // }
-    // @Input() movies!:Movies[];
     
-    // products!: Observable < Movies[] >
-
-    // // products!: Product[];
-    // constructor(private movieService:MovieService){}
-  
-    // ngOnInit(): void {
-    //   this.products = this.movieService.getMovies()
-    // }
-    // @Input() id!: string;
-    // movies!:Movies;
-    // movieService = inject(MovieService);
-    // movieDetail!:Observable<Movies>
-    
-    // ngOnInit(): void {
-    //   let id = parseInt(this.id);
-  
-    //   this.movieDetail = this.movieService.getMovieById(id)
-    //   this.movieDetail.subscribe((response:Movies)=>{
-    //     this.movies=response;
-    //   })
-    // }
-
     movies!: Observable<Movies[]>;
+    @ViewChild('sliderSection') sliderSection!: ElementRef;
 
     @Input('id') id!: string;
     // movie!: Movies;
@@ -78,5 +29,57 @@ export class HomeComponent{
       console.log(this.movies)
       this.movies = this.movieService.getMovies()
       console.log(this.movies)
+      this.updateArrowVisibility();
     }
+
+    scrollLeft(event: Event): void {
+      event.preventDefault();
+      const wrapper = document.querySelector('.wrapper');
+      if (wrapper) {
+        wrapper.scrollBy({
+          left: -window.innerWidth,
+          behavior: 'smooth'
+        });
+        this.updateArrowVisibility();
+      }
+    }
+  
+    scrollRight(event: Event): void {
+      event.preventDefault();
+      const wrapper = document.querySelector('.wrapper');
+      if (wrapper) {
+        wrapper.scrollBy({
+          left: window.innerWidth,
+          behavior: 'smooth'
+        });
+        this.updateArrowVisibility();
+      }
+    }
+  
+    @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event): void {
+    this.updateArrowVisibility();
+  }
+
+  private updateArrowVisibility(): void {
+    const wrapper = document.querySelector('.wrapper');
+    const leftArrow = document.querySelector('.leftArrow') as HTMLElement;
+    const rightArrow = document.querySelector('.rightArrow') as HTMLElement;
+
+    if (wrapper) {
+      const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
+
+      if (wrapper.scrollLeft === 0) {
+        leftArrow.style.display = 'none';
+      } else {
+        leftArrow.style.display = 'block';
+      }
+
+      if (wrapper.scrollLeft >= maxScrollLeft) {
+        rightArrow.style.display = 'none';
+      } else {
+        rightArrow.style.display = 'block';
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 
 <header>
-    <img src="../../assets/factoryx2.png" alt="">
+    <img src="../../assets/factorix.png" alt="">
     <nav>
         <ul class="nav">
             <li>Home</li>
@@ -18,8 +18,8 @@
     <p>We Think You'll Love These</p>
 <ul>
     <div class="wrapper">
-        <section id="section1">
-        <a href="#section3" class="arrowButton leftArrow">‹</a>
+        <section id="section1" class="slider">
+        <a href="#section1" class="arrowButton leftArrow" (click)="scrollLeft($event)">‹</a>
         @for (movie of (movies | async) || []; track movie.id) {
             <div class="item">
             <!-- <div class="slider-item"> -->
@@ -28,7 +28,7 @@
                 </a>
             </div>
         }
-        <a href="#section1" class="arrowButton rightArrow">›</a>
+        <a href="#section1" class="arrowButton rightArrow" (click)="scrollRight($event)">›</a>
         </section>
     </div>
 </ul>
