@@ -30,10 +30,10 @@ header{
 
     .closeButton{
         border: 1px solid blue;
-        width: 70vw;
+        width: 60vw;
         display: flex;
         justify-content: end;
-    }
+        }
 }
 
 .movieDetails{
@@ -45,22 +45,24 @@ header{
         "textDetails";
     justify-items: center;
     gap: 20px;
-    width: 70vw;
+    width: 60vw;
     position: relative;
 
     .scene {
         width: 60vw;
         grid-area: poster;
         position: relative;
+        height: 70vh;
     }
 
     .textDetails{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 4em;
+        gap: 3em;
         width: 100%;
         max-width: 1200px;
         grid-area: textDetails;
+        border: 1px solid goldenrod;
 
         .titlePlay{
             position: absolute;
@@ -69,7 +71,7 @@ header{
             height: 25vh;
             font-size: 4em;
             top: 5em;
-            left: 1em;
+            // left: 1em;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.155) 0%, rgba(0, 0, 0, 0.954) 100%);
             
             .title{
@@ -124,13 +126,14 @@ header{
             gap:1em;
             display: flex;
             flex-direction: column;
+            padding-top: 0.5em;
         }
 
         .newSeason{
-            font-size: 1.7em;
+            font-size: 1.5em;
             font-weight: 600;
             padding-top: 1em;
-            padding-bottom: 1em;
+            padding-bottom: 0.3em;
         }
 
         .label{
@@ -147,5 +150,8 @@ header{
             text-decoration: underline;
         }
         
+        .synopsis{
+            line-height: 1.6em;
+        }
     }
 }

@@ -5,35 +5,36 @@
     "poster": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FCiZDNemDSrA%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=60ea050dec0b088f7a44069513d933831c89ea9505b4ca79e3d436dacd68bcaf&ipo=images",
     "synopsis": "Flashing between past and present, a fractured family confronts haunting memories of their old home and the terrifying events that drove them from it.",
     "genres": [
-      "Drama", "Horror"
+      "Drama", " Horror"
     ],
     "year": 2018,
     "director": "Mike Flanagan",
     "actors": [
       "Michiel Huisman",
-      "Carla Cugino",
-      "Henry Thomas",
-      "Kate Siegel",
-      "Victoria Pedretti",
-      "Oliver Jackson-Cohen"
-    ]
+      " Carla Cugino",
+      " Henry Thomas",
+      " Kate Siegel",
+      " Victoria Pedretti",
+      " Oliver Jackson-Cohen"
+    ],
+    "scene": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.indiewire.com%2Fwp-content%2Fuploads%2F2018%2F10%2FHaunting-of-Hill-House-Long-Take.jpg&f=1&nofb=1&ipt=52b71852d64ede9bd9fa88570425a57c76cfce1b29de2612a5a0e5c7dea09b93&ipo=images"
   }, {
     "id": 2,
     "title": "Severance",
     "poster": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbaylorlariat.com%2Fwp-content%2Fuploads%2F2022%2F04%2FSeverance-scaled.jpg&f=1&nofb=1&ipt=a82f50eb58b2aa9ce6144af96c0bef03ad611a4959b05e0a869d866ae75d8690&ipo=images",
     "synopsis": "Mark leads a team of office workers whose memories have been surgically divided between their work and personal lives. When a mysterious colleague appears outside of work, it begins a journey to discover the truth about their jobs.",
     "genres": [
-      "Mystery", "Drama", "Sci-Fi", "Thriller"
+      "Mystery", " Drama", " Sci-Fi", " Thriller"
     ],
     "year": 2022,
     "director": "Francis Ford Coppola",
     "actors": [
       "Adam Scott",
-      "Zack Cherry",
-      "Britt Lower",
-      "Tramell Tillman",
-      "Jen Tullock",
-      "Lichen Dachman"
+      " Zack Cherry",
+      " Britt Lower",
+      " Tramell Tillman",
+      " Jen Tullock",
+      " Lichen Dachman"
     ],
     "scene": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.netzwelt.de%2Fdw1600_dh900_sw3600_sh2025_sx0_sy187_sr16x9_nu2%2Fpicture%2Foriginal%2F2022%2F04%2Fseverance-337272.jpeg&f=1&nofb=1&ipt=f7f2d03a332bdc96cf85d0de343ae343f29fad3bf9201c08fc9a173a145ccb21&ipo=images"
   }, {
@@ -45,69 +46,76 @@
       "Comedy"
     ],
     "year": 2014,
-    "director": ["Mike Judge", "John Altschuler", "Dave Krinsky"],
+    "director": ["Mike Judge", " John Altschuler", " Dave Krinsky"],
     "actors": [
       "Thomas Middleditch",
-      "T.J. Miller",
-      "Josh Brener",
-      "Martin Starr",
-      "Kumail Nanjiani",
-      "Zach Woods"
-    ]
+      " T.J. Miller",
+      " Josh Brener",
+      " Martin Starr",
+      " Kumail Nanjiani",
+      " Zach Woods"
+    ],
+    "scene": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthecinemaholic.com%2Fwp-content%2Fuploads%2F2019%2F11%2Fsilicon-valley.jpg&f=1&nofb=1&ipt=690e498c970efb4e163f686ed15e8d1ec360623d915c633eafadf999c95a8938&ipo=images"
   }, {
     "id": 4,
     "title": "Bojack Horseman",
     "poster": "https://cdn.mos.cms.futurecdn.net/CfpRBiJdNpFc7qp5DTESTk.jpg",
     "synopsis": "BoJack Horseman was the star of the hit television show Horsin' Around in the '80s and '90s, but now he's washed up, living in Hollywood, complaining about everything, and wearing colorful sweaters.",
     "genres": [
-      "Animation", "Comedy", "Drama"
+      "Animation", " Comedy", " Drama"
     ],
     "year": 2014,
     "creator": "Raphael Bob-Waksberg",
     "actors": [
       "Will Arnett",
-      "Amy Sedaris",
-      "Alison Brie",
-      "Aaron Paul",
-      "Paul F. Tompkins"
-    ]
+      " Amy Sedaris",
+      " Alison Brie",
+      " Aaron Paul",
+      " Paul F. Tompkins"
+    ],
+    "scene": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2FArkaZ2dHc6NY9c6rCwdvB_uIKLo%3D%2F0x0%3A2000x1125%2F1120x0%2Ffilters%3Afocal(0x0%3A2000x1125)%3Ano_upscale()%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F11933619%2Fbojack_beer_can.jpg&f=1&nofb=1&ipt=314cc19c417b53e0a728105aea822ea7757c71a53a94ef11ce434cd69c98eb7f&ipo=images"
   }, 
   {
     "id": 5,
     "title": "Mindhunter",
     "poster": "https://wallpapers.com/images/hd/mindhunter-holden-ford-and-casts-poster-xueb90ehir95vhct.jpg",
-    "synopsis": "The relocation of Polish Jews from surrounding areas to Krakow begins in late 1939, shortly after the outbreak of World War II, when the German Army defeats...",
+    "synopsis": "In the late 1970s, two FBI agents broaden the realm of criminal science by investigating the psychology behind murder and end up getting too close to real-life monsters.",
     "genres": [
-      "Crime", "Drama", "Thriller"
+      "Crime", " Drama", " Thriller"
     ],
     "year": 2017,
     "creator": "Joe Penhall",
     "actors": [
       "Jonathan Groff",
-      "Holt McCallany",
-      "Anna Torv",
-      "Hannah Gross",
-      "Cotter Smith"
-    ]
+      " Holt McCallany",
+      " Anna Torv",
+      " Hannah Gross",
+      " Cotter Smith"
+    ],
+    "scene": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.highonfilms.com%2Fwp-content%2Fuploads%2F2019%2F08%2FMindhunter-Season-2.jpg&f=1&nofb=1&ipt=0f6f743000d464d29d7e436fc485de2565fce3d6e5a9544da1cc7f5244ebe8ab&ipo=images"
   },
   {
-    "id": 5,
-    "title": "Schindler's List",
+    "id": 6,
+    "title": "Arcane",
     "poster": "https://1401700980.rsc.cdn77.org/data/images/full/119682/netflixs-arcane-unveils-first-teaser-poster-release-date-for-season-2.jpg?w=811?w=430",
-    "synopsis": "The relocation of Polish Jews from surrounding areas to Krakow begins in late 1939, shortly after the outbreak of World War II, when the German Army defeats...",
+    "synopsis": "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League of Legends champions and the power that will tear them apart.",
     "genres": [
-      "Biography", "Drama", "History"
-    ],
-    "year": 1993,
-    "director": "Steven Spielberg",
-    "actors": [
-      "Liam Neeson",
-      "Ben Kingsley",
-      "Ralph Fiennes",
-      "Caroline Goodall",
-      "Jonathan Sagall",
-      "Embeth Dav"
-    ]
+            "Animation", " Action", " Adventure"
+        ],
+        "year": 2021,
+        "creators": [
+            "Christian Linke", " Alex Yee"
+        ],
+        "actors": [
+            "Hailee Steinfeld",
+            " Ella Purnell",
+            " Kevin Alejandro",
+            " Katie Leung",
+            " Jason Spisak",
+            " Harry Lloyd",
+            " Toks Olagundoye"
+        ],
+        "scene": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimg.uhdpaper.com%2Fwallpaper%2Farcane-vi-caitlyn-netflix-series-lol-256%400%40e-pc-hd.jpg&f=1&nofb=1&ipt=8246f82adf5bc036f4b064fb095f3a5294646849200174980fea44cde6d8349e&ipo=images"
   }
 ]  
 }
