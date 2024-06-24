@@ -1,14 +1,3 @@
-:root{
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 header{
     background-color: black;
     height: 10vh;
@@ -30,23 +19,133 @@ header{
     }
 
 }
-    
+
+.movieContainer{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid green;
+
+    .closeButton{
+        border: 1px solid blue;
+        width: 70vw;
+        display: flex;
+        justify-content: end;
+    }
+}
 
 .movieDetails{
     color: white;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border: 1px solid red;
+    display: grid;
+    grid-template-areas: 
+        "poster"
+        "textDetails";
+    justify-items: center;
+    gap: 20px;
+    width: 70vw;
+    position: relative;
 
-    img{
-        width: 30vw;
+    .scene {
+        width: 60vw;
+        grid-area: poster;
+        position: relative;
     }
 
     .textDetails{
-        align-items: left;
-        gap: 2vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4em;
+        width: 100%;
+        max-width: 1200px;
+        grid-area: textDetails;
+
+        .titlePlay{
+            position: absolute;
+            border: 1px solid pink;
+            width: 100%;
+            height: 25vh;
+            font-size: 4em;
+            top: 5em;
+            left: 1em;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.155) 0%, rgba(0, 0, 0, 0.954) 100%);
+            
+            .title{
+                background-color: transparent;
+                margin-top:0.35em;
+                margin-left: 0.15em;
+                font-weight: bold;
+            }
+
+            .buttonsMovie{
+                display: flex;
+                align-items: center;
+                background-color: transparent;
+                gap: 0.2em;
+                border: 1px solid purple;
+
+                #playButton{
+                    height: 0.7em;
+                    border-radius: 0.10em;
+                    cursor: pointer;
+                    margin-left: 0.25em;
+                }
+
+                .roundButtons{
+                    background-color: rgba(48, 47, 47, 0.664);
+                    height: 0.65em;
+                    width: 0.65em;
+                    border: 2.5px solid rgba(255, 255, 255, 0.594);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    cursor: pointer;
+
+                    img{
+                        background-color: transparent;
+                        height: 0.3em;
+                    }
+                }
+            }
+
+        }
+        .left {
+            grid-column: 1;
+            gap:1em;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .right {
+            grid-column: 2;
+            gap:1em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .newSeason{
+            font-size: 1.7em;
+            font-weight: 600;
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+
+        .label{
+            color: grey;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+            line-height: 1.4em;
+        }
+        
+        a:hover{
+            text-decoration: underline;
+        }
+        
     }
 }

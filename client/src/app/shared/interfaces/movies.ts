@@ -6,5 +6,6 @@ export interface Movies {
         "genres": string[],
         "year": number,
         "director": string,
-        "actors": string[]
+        "actors": string[],
+        "scene": string
 }
