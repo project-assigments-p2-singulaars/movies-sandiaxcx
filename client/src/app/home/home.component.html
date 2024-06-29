@@ -1,9 +1,9 @@
 
 <header>
-    <img src="../../assets/factorix.png" alt="">
+    <a [routerLink]="['/home']"><img src="../../assets/factorix.png" alt=""></a>
     <nav>
-        <ul class="nav">
-            <li>Home</li>
+        <ul>
+            <a [routerLink]="['/home']"><li>Home</li></a>
             <li>TV Shows</li>
             <li>Movies</li>
             <li>New & Popular</li>
@@ -14,7 +14,7 @@
 <section class="videoBanner">
     <video src="../../assets/silicon.mp4" muted autoplay id="background-video"></video>
 </section>
-<div>
+<div class="movieOptions">
     <p>We Think You'll Love These</p>
 <ul>
     <div class="wrapper">
@@ -22,7 +22,6 @@
         <a href="#section1" class="arrowButton leftArrow" (click)="scrollLeft($event)">‹</a>
         @for (movie of (movies | async) || []; track movie.id) {
             <div class="item">
-            <!-- <div class="slider-item"> -->
                 <a [routerLink]="['/movies', movie.id]">
                     <img [src]="movie.poster" alt="{{movie.title}}">
                 </a>
@@ -33,3 +32,4 @@
     </div>
 </ul>
 </div>
+

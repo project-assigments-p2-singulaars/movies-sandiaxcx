@@ -3,11 +3,12 @@ import { Movies } from '../shared/interfaces/movies';
 import { RouterLink } from '@angular/router';
 import { MovieService } from '../shared/services/movie.service';
 import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, AsyncPipe],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })

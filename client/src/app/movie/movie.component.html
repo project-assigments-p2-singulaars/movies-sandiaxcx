@@ -1,9 +1,9 @@
 
 <header>
-    <img src="../../assets/factorix.png" alt="">
+    <a [routerLink]="['/home']"><img src="../../assets/factorix.png" alt=""></a>
     <nav>
         <ul>
-            <li>Home</li>
+            <a [routerLink]="['/home']"><li>Home</li></a>
             <li>TV Shows</li>
             <li>Movies</li>
             <li>New & Popular</li>
@@ -56,3 +56,34 @@
         </div>
     </div>
 </div>
+
+<!-- <div class="movieOptions">
+    <img [src]="movies.poster" alt="{{movies.title}}">
+</div> -->
+
+
+<!-- native APIS -->
+ <!-- XAML -->
+  <!-- You can access Native APIS in C#
+  Build natie cross-platform UI in XAML or C#
+  has (data binding )
+  
+  If you create a button, any button, MAUI will generate and render 
+  the native control
+  which means we will get:
+  IOS -> UIKit
+  Android -> Widgets
+  Mac -> Catalyst
+  Windows '> APP SDK WinUI 3'
+
+  but as devs we write it all as one shared code base, all of them
+
+  As well as sharing the Business Logic, such as:
+  Models,
+  View Models,
+  RESTful Service Calls
+  Databases
+  and morrre -->
+
+
+
