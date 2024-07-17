@@ -4,18 +4,6 @@ import { MovieComponent } from './movie/movie.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: HomeComponent,
-  // },
-  // {
-  //   path: 'home',
-  //   redirectTo: '',
-  // },
-  // {
-  //   path: 'movies/:id',
-  //   component: MovieComponent,
-  // },
   {
     path: '',
     component: ProfilesComponent
