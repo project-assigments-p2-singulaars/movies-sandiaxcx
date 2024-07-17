@@ -1,6 +1,6 @@
 
 <header>
-    <a [routerLink]="['/home']"><img src="../../assets/factorix.png" alt=""></a>
+    <a [routerLink]="['/home']"><img src="../../assets/factorix.png" alt="" id="factorix"></a>
     <nav>
         <ul>
             <a [routerLink]="['/home']"><li>Home</li></a>
@@ -10,9 +10,25 @@
             <li>My List</li>
         </ul>
     </nav>
+        <div class="navIcons">
+            <img src="../../assets/search.png" alt="">
+            <img src="../../assets/active.png" alt="">
+            <img src="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg" alt="" id="profilePic">
+        </div>
     </header>
 <section class="videoBanner">
-    <video src="../../assets/silicon.mp4" muted autoplay id="background-video"></video>
+    <video src="../../assets/silicon.mp4" autoplay id="background-video"></video>
+    <div class="videoText">
+        <h2>Silicon Valley</h2>
+        <div class="buttonsMovie">
+            <a [routerLink]="['/movies/3']">
+                <img src="../../assets/play.png" alt="Play Button" id="playButton">
+            </a>
+            <a [routerLink]="['/movies/3']">
+                <img src="../../assets/more.png" alt="More Info Button" id="moreButton">
+            </a>
+        </div>
+    </div>
 </section>
 <div class="movieOptions">
     <p>We Think You'll Love These</p>
