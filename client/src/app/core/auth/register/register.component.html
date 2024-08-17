@@ -1,1 +1,21 @@
-<p>register works!</p>
+<div class="authPage">
+    <header>    
+        <a [routerLink]="['/home']"><img src="../../assets/factorix.png" alt="" id="factorix"></a>
+        <a [routerLink]="['/login']"><p>Sign In</p></a>
+    </header>
+    <div class="register">
+        <div class="registerText">
+            <h2>Create a password to start your membership.</h2>
+            <h3>Just a few more steps and youre done!</h3>
+            <h3>We hate paperwork, too.</h3>
+        </div>
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="submit()"> -->
+            <form [formGroup]="registerForm" (ngSubmit)="submit()">
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" formControlName="email" placeholder="Enter your email">
+                <input type="password" formControlName="password" placeholder="Please write your password">
+            <!-- <a [routerLink]="['/register']"><button>Next</button></a>   -->
+            <button type="submit">Sign Up</button>
+            </form>
+    </div>
+</div>

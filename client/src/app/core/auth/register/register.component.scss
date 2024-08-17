@@ -1,0 +1,40 @@
+.authPage{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100vw;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // width: 80%;
+    height: 70vh;
+
+}
+
+button{
+    // all: unset;
+    background-color: #DC1A28;
+    border-radius: 0.5em;
+    height: 8vh;
+    border: transparent;
+    cursor: pointer;
+    width: 40%;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.6em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    // width: 30%;
+}
