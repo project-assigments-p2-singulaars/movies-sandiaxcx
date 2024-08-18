@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { FormGroup} from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { UserLogin } from '../../../shared/interfaces/users';
 // import { AuthService } from 'app/core/services/auth.service';
 // import { UserLogin } from 'app/shared/models/user';
 // import { Router } from '@angular/router';
@@ -14,27 +16,42 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  
+  private authService = inject(AuthService)
+  private formBuilder= inject(FormBuilder)
+  router = inject(Router);
+  loginForm!:FormGroup;
+  // matcher = new CustomErrorStateMatcher();
 
-  // loginForm!:FormGroup;
 
-  // submit(){
-  //   const user:UserLogin={
-  //     userName:this.loginForm.controls["username"].value,
-  //     password:this.loginForm.controls["password"].value,
-  //   }
-  //   if(this.loginForm.valid){
-  //     console.log("pass1");
-  //     const logResult = this.authService.login(user).subscribe(r=>{
-  //       this.router.navigateByUrl('')
-  //     });
+  ngOnInit(): void {
 
-  //     console.log("logResult",logResult)
-  //     console.log("pass2",user)
-  //   }
-  // };
+    this.loginForm=this.formBuilder.group({
+      email: ["", Validators.required],
+      password:["",Validators.required]
+    });
+  }
+
+  
+  submit(){
+    const user:UserLogin={
+      email:this.loginForm.controls["email"].value,
+      password:this.loginForm.controls["password"].value,
+    }
+    if(this.loginForm.valid){
+      console.log("pass1");
+      const logResult = this.authService.login(user).subscribe(r=>{
+        this.router.navigateByUrl('home')
+      });
+
+      console.log("logResult",logResult)
+      console.log("pass2",user)
+    }
+  };
+  
 }

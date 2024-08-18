@@ -8,15 +8,14 @@
             <h3>Watch anywhere. Cancel anytime.</h3>
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
         </div>
-        <!-- <form [formGroup]="loginForm" (ngSubmit)="submit()"> -->
-            <form action="">
-                <!-- <label for="email">Email:</label> -->
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <!-- <form action=""> -->
                 <div class="loginBox">
-                <input type="email" placeholder="Enter your email">
-                <button type="submit">Get Started ></button>
+                <input type="email" placeholder="Enter your email" formControlName="email">
+                <!-- <button type="submit">Get Started ></button> -->
             </div>
             <div class="loginBox">
-                <input type="password" placeholder="Please write your password">
+                <input type="password" placeholder="Please write your password"  formControlName="password">
                 <button type="submit">Get Started ></button>
             </div>
             <a [routerLink]="['/register']"><p>Don't have an account yet?</p></a>

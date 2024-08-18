@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage.service';
-import { UserRegister, UserResponse } from '../../shared/interfaces/users';
-import { catchError, tap, throwError } from 'rxjs';
+import { UserLogin, UserRegister, UserResponse } from '../../shared/interfaces/users';
+import { catchError, of, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,34 @@ export class AuthService {
   private http = inject(HttpClient)
   private router = inject(Router);
   private localStorageService = inject(LocalStorageService);
-  constructor() { }
+
+  isLogged = signal<boolean>(false);
+
+
+  constructor() {
+    if(this.localStorageService.getToken()){
+      this.isLogged.set(true);
+    } else {
+      this.isLogged.set(false);
+    }
+  }
+
+  login(user:UserLogin){
+    const options = {
+      headers: {
+        'accept': '*/*',
+        'Content-Type': 'application/json'
+      },
+    }
+
+    return this.http.post<UserLogin>(`${this.url}`, user, options).pipe(
+      tap((response: any) => {
+        if (this.localStorageService.getToken()) {
+          this.isLogged.set(true);
+        }
+      }),
+      catchError(e=>of(e)))
+  }
 
   register(user: UserRegister) {
     const options = {
@@ -33,4 +60,11 @@ export class AuthService {
       })
     );
   }
+
+  logout (){
+    this.localStorageService.removeToken();
+    this.isLogged.set(false);
+    this.router.navigate(['/login'])
+  }
+
 }
