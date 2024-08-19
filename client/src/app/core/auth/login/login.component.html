@@ -9,10 +9,8 @@
             <p>Ready to watch? Enter your email to create or restart your membership.</p>
         </div>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
-            <!-- <form action=""> -->
-                <div class="loginBox">
+            <div class="loginBox">
                 <input type="email" placeholder="Enter your email" formControlName="email">
-                <!-- <button type="submit">Get Started ></button> -->
             </div>
             <div class="loginBox">
                 <input type="password" placeholder="Please write your password"  formControlName="password">

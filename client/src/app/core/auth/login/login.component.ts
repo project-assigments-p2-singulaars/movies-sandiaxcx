@@ -30,28 +30,42 @@ export class LoginComponent {
 
 
   ngOnInit(): void {
-
     this.loginForm=this.formBuilder.group({
       email: ["", Validators.required],
       password:["",Validators.required]
     });
   }
 
-  
   submit(){
-    const user:UserLogin={
-      email:this.loginForm.controls["email"].value,
-      password:this.loginForm.controls["password"].value,
-    }
-    if(this.loginForm.valid){
-      console.log("pass1");
-      const logResult = this.authService.login(user).subscribe(r=>{
-        this.router.navigateByUrl('home')
-      });
-
-      console.log("logResult",logResult)
-      console.log("pass2",user)
-    }
-  };
+    if (this.loginForm.valid) {
+      const user: UserLogin = {
+        email: this.loginForm.controls["email"].value,
+        password: this.loginForm.controls["password"].value,
+      };
   
+      this.authService.login(user).subscribe({
+        next: () => {
+          console.log("Login successful");
+          this.router.navigateByUrl('home');
+        },
+        error: (err) => {
+          console.error("Login failed", err);
+          alert('Login failed. Please check your credentials.');
+        }
+      });
+    }
+  }
+
+  // submit(){
+  //   const user: UserLogin ={
+  //     email: this.loginForm.controls["email"].value,
+  //     password: this.loginForm.controls["password"].value,
+  //   }
+  //   if(this.loginForm.valid){
+  //     console.log("login works")
+  //     this.authService.login(user).subscribe(r =>{
+  //         this.router.navigate(['/home'])
+  //     })
+  //   }
+  //   }
 }

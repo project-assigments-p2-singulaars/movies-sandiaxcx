@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class RegisterComponent {
   authService = inject(AuthService);
   registerForm: FormGroup;
   submitted = false;
+  router = inject(Router)
 
 
   constructor(private fb: FormBuilder) {
@@ -37,17 +38,15 @@ export class RegisterComponent {
       };
       console.log(newUser);
 
-      this.authService.register(newUser).subscribe(
-        response => {
-          console.log('Registration successful:', response);
-          // this.openDialog();
-          // this.router.navigateByUrl('');
-          // this.resetForm();
+      this.authService.register(newUser).subscribe({
+        next: () => {
+          console.log('Registration successful');
+          this.router.navigateByUrl('home'); // Redirect to home after registration
         },
-        error => console.error('Registration error:', error)
-      );
+        error: (err) => console.error('Registration error:', err)
+      });
     }
-}
+  }
 
 
 resetForm() {

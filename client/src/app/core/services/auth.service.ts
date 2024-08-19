@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage.service';
-import { UserLogin, UserRegister, UserResponse } from '../../shared/interfaces/users';
+import { User, UserLogin, UserRegister, UserResponse } from '../../shared/interfaces/users';
 import { catchError, of, tap, throwError } from 'rxjs';
 
 @Injectable({
@@ -13,6 +13,7 @@ export class AuthService {
   private http = inject(HttpClient)
   private router = inject(Router);
   private localStorageService = inject(LocalStorageService);
+  token ='';
 
   isLogged = signal<boolean>(false);
 
@@ -25,22 +26,33 @@ export class AuthService {
     }
   }
 
-  login(user:UserLogin){
-    const options = {
-      headers: {
-        'accept': '*/*',
-        'Content-Type': 'application/json'
-      },
-    }
-
-    return this.http.post<UserLogin>(`${this.url}`, user, options).pipe(
-      tap((response: any) => {
-        if (this.localStorageService.getToken()) {
+  login(user: UserLogin) {
+    return this.http.get<UserLogin[]>(`${this.url}?email=${user.email}&password=${user.password}`).pipe(
+      tap((response: UserLogin[]) => {
+        if (response.length > 0) { // User found
+          const fakeToken = 'fake-jwt-token'; // Generate or use a hardcoded fake token
+          this.localStorageService.setToken(fakeToken);
           this.isLogged.set(true);
+        } else { // User not found
+          throw new Error('Invalid credentials');
         }
       }),
-      catchError(e=>of(e)))
+      catchError(error => {
+        this.isLogged.set(false);
+        console.error('Login error:', error);
+        return throwError(() => new Error('Login failed'));
+      })
+    );
   }
+  
+
+  // login(user: User){
+  //   return this.http.post<User>(`${this.url}/login`, user).pipe(catchError(e=>of(e)))
+  // }
+  
+  // isAuth(){
+  //   return this.token.length > 0;
+  // }
 
   register(user: UserRegister) {
     const options = {
@@ -50,9 +62,12 @@ export class AuthService {
       },
     }
     
-    return this.http.post<UserResponse>(`${this.url}`, user, options).pipe(
+    return this.http.post<UserRegister>(`${this.url}`, user, options).pipe(
       tap((response: any) => {
         console.log('Registration successful:', response);
+        const fakeToken = 'fake-jwt-token'; // Simulate a token
+        this.localStorageService.setToken(fakeToken);
+        this.isLogged.set(true);
       }),
       catchError(e => {
         console.error('Registration error:', e);
@@ -60,6 +75,7 @@ export class AuthService {
       })
     );
   }
+
 
   logout (){
     this.localStorageService.removeToken();
