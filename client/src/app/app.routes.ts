@@ -7,10 +7,11 @@ import { RegisterComponent } from './core/auth/register/register.component';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: ProfilesComponent
-  // },
+  {
+    path: '',
+    component: ProfilesComponent,
+    canActivate:[authGuard]
+  },
   {
     path: 'home',
     component: HomeComponent,

@@ -8,10 +8,10 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<unknown>, ne
   const localStorageService = inject(LocalStorageService);
   return next(req).pipe(tap(( response : any) => {
 
-    if (response.ok && response.url?.startsWith(`${environment.API_URL}`) ){
+    if (response.ok && response.url?.startsWith(`${environment.API_URL}/login`) ){
       console.log( 'login response is ok', response );
       localStorageService.setToken(response.body.token);
-    } else if (response.ok && response.url?.startsWith(`${environment.API_URL}`)) {
+    } else if (response.ok && response.url?.startsWith(`${environment.API_URL}/register`)) {
       console.log('register response is ok', response );
       // localStorageService.setToken(response.body.token);
     }

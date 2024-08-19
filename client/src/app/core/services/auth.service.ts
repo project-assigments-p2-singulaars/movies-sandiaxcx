@@ -29,11 +29,11 @@ export class AuthService {
   login(user: UserLogin) {
     return this.http.get<UserLogin[]>(`${this.url}?email=${user.email}&password=${user.password}`).pipe(
       tap((response: UserLogin[]) => {
-        if (response.length > 0) { // User found
-          const fakeToken = 'fake-jwt-token'; // Generate or use a hardcoded fake token
+        if (response.length > 0) {
+          const fakeToken = 'fake-jwt-token';
           this.localStorageService.setToken(fakeToken);
           this.isLogged.set(true);
-        } else { // User not found
+        } else {
           throw new Error('Invalid credentials');
         }
       }),
@@ -44,15 +44,6 @@ export class AuthService {
       })
     );
   }
-  
-
-  // login(user: User){
-  //   return this.http.post<User>(`${this.url}/login`, user).pipe(catchError(e=>of(e)))
-  // }
-  
-  // isAuth(){
-  //   return this.token.length > 0;
-  // }
 
   register(user: UserRegister) {
     const options = {
@@ -65,7 +56,7 @@ export class AuthService {
     return this.http.post<UserRegister>(`${this.url}`, user, options).pipe(
       tap((response: any) => {
         console.log('Registration successful:', response);
-        const fakeToken = 'fake-jwt-token'; // Simulate a token
+        const fakeToken = 'fake-jwt-token';
         this.localStorageService.setToken(fakeToken);
         this.isLogged.set(true);
       }),

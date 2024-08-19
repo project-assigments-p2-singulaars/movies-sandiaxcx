@@ -3,15 +3,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { UserLogin } from '../../../shared/interfaces/users';
-// import { AuthService } from 'app/core/services/auth.service';
-// import { UserLogin } from 'app/shared/models/user';
-// import { Router } from '@angular/router';
-// import { MatTab, MatTabGroup, MatTabLabel } from '@angular/material/tabs';
-// import { RegisterComponent } from "../register/register.component";
-// import { MatError, MatFormField, MatHint, MatLabel } from '@angular/material/form-field';
-// import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
-// import { MatInputModule } from '@angular/material/input';
-// import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +37,7 @@ export class LoginComponent {
       this.authService.login(user).subscribe({
         next: () => {
           console.log("Login successful");
-          this.router.navigateByUrl('home');
+          this.router.navigateByUrl('');
         },
         error: (err) => {
           console.error("Login failed", err);
@@ -55,17 +46,4 @@ export class LoginComponent {
       });
     }
   }
-
-  // submit(){
-  //   const user: UserLogin ={
-  //     email: this.loginForm.controls["email"].value,
-  //     password: this.loginForm.controls["password"].value,
-  //   }
-  //   if(this.loginForm.valid){
-  //     console.log("login works")
-  //     this.authService.login(user).subscribe(r =>{
-  //         this.router.navigate(['/home'])
-  //     })
-  //   }
-  //   }
 }
