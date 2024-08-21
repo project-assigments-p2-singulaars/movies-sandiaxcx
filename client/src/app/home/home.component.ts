@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { MovieService } from '../shared/services/movie.service';
 import { RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
+import { AuthService } from '../core/services/auth.service';
 
 @Component({
     selector: 'app-home',
@@ -14,7 +15,8 @@ import { AsyncPipe } from '@angular/common';
     imports: [MovieComponent, RouterLink, AsyncPipe]
 })
 export class HomeComponent{
-  
+  public authService = inject(AuthService);
+
     
     movies!: Observable<Movies[]>;
     @ViewChild('sliderSection') sliderSection!: ElementRef;
@@ -82,4 +84,10 @@ export class HomeComponent{
       }
     }
   }
+
+  
+  onLogout() {
+    this.authService.logout();
+  }
+
 }

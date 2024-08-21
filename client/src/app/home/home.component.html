@@ -8,6 +8,7 @@
             <li>Movies</li>
             <li>New & Popular</li>
             <li>My List</li>
+            <a [routerLink]="['/signout']"><button (click)="onLogout()">Sign Out</button></a>
         </ul>
     </nav>
         <div class="navIcons">
@@ -48,4 +49,26 @@
     </div>
 </ul>
 </div>
+<!-- SLIDER -->
+<!-- 
+<section className="up-container" ref={sliderRef}>
+    <button
+      onClick={() => scroll(-1800)}
+      className="up-first-btn"
+      aria-label="Scroll left"
+    >
+      <img className="up-arrow" src={arrowLeft} alt="" />
+    </button>
+    <div className="up-slider-container">
+      {movies &&
+        movies.map((movie) => <UpcomingCard movie={movie} key={movie.id} />)}
+    </div>
 
+    <button
+      onClick={() => scroll(1800)}
+      className="up-second-btn"
+      aria-label="Scroll right"
+    >
+      <img className="up-arrow" src={arrowRight} alt="" />
+    </button>
+  </section> -->
