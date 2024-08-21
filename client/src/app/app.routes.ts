@@ -5,6 +5,7 @@ import { ProfilesComponent } from './profiles/profiles.component';
 import { LoginComponent } from './core/auth/login/login.component';
 import { RegisterComponent } from './core/auth/register/register.component';
 import { authGuard } from './core/guards/auth.guard';
+import { LogoutComponent } from './core/auth/logout/logout.component';
 
 export const routes: Routes = [
   {
@@ -29,5 +30,9 @@ export const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   }
 ];
