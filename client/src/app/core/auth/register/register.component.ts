@@ -15,6 +15,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
   submitted = false;
   router = inject(Router)
+  
 
 
   constructor(private fb: FormBuilder) {
@@ -47,9 +48,9 @@ export class RegisterComponent {
   }
 
 
-resetForm() {
-  this.registerForm.reset();
-  this.submitted = false;
-}
+// resetForm() {
+//   this.registerForm.reset();
+//   this.submitted = false;
+// }
 
 }
